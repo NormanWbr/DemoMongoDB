@@ -37,4 +37,9 @@ public class LibraryService {
         this.libraryRepository.save(entity);
         return entity.getId();
     }
+
+    public List<Book> getAllBooks(String idLibrary) {
+        Library entity = this.libraryRepository.findById(idLibrary).get();
+        return entity.getBooks();
+    }
 }
